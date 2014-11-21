@@ -1,3 +1,7 @@
+/*
+ * By ： Gavin
+*/
+
 avalon.define("box1", function(vm) {
     /* 初始化表单 */
     vm.string = "";
@@ -63,6 +67,7 @@ avalon.define("box1", function(vm) {
         vm.leng.next = changeNum(y2);
     }
 });
+
 avalon.define("box2",function(vm){
 	vm.string2 = "";
 	vm.daihao = "";
@@ -70,6 +75,7 @@ avalon.define("box2",function(vm){
 		vm.daihao = parseInt(vm.string2/6)+1;
 	}
 });
+
 avalon.define("box3",function(vm){
 	vm.string3 = "";
 	vm.dushu = "";
@@ -89,15 +95,29 @@ avalon.define("box4",function(vm){
         second_4 = parseInt(keywordsLong[0]/6)+1+30;
         first_4 = mathFormat_2(parseInt(keywordsLat[0]/4)+1);
         for (var i = 1; i <= 8; i++) {
-            vm.result += getStyle(i)+"<br>"+first_4+second_4+mathFormat_2(i)+"<br>";
-            preLong_4 = (second_4-32)*6;
-            nextLong_4 = (second_4-31)*6;
+            
+            preLong_4 = (second_4-31)*6;
+            nextLong_4 = (second_4-30)*6;
+            preLat_4 = (mathFormat(first_4)-1)*4;
+            nextLat_4 = mathFormat(first_4)*4;
 
             //全部转换成度数的形式
-            dushu_4 = parseFloat(keywordsLong[0])+parseFloat(keywordsLong[1]/60)+parseFloat(keywordsLong[2]/3600);
-            console.log(dushu_4);
+            dushuLong_4 = parseFloat(keywordsLong[0])+parseFloat(keywordsLong[1]/60)+parseFloat(keywordsLong[2]/3600);
+            dushuLat_4  = parseFloat(keywordsLat[0])+parseFloat(keywordsLat[1]/60)+parseFloat(keywordsLat[2]/3600);
 
+            var eachboxLong = (nextLong_4 - preLong_4)/getNetNum_2(i);
+            var eachboxLat  = (nextLat_4 - preLat_4)/getNetNum_2(i);
+
+            four_4 = format1000(parseInt((nextLat_4 - dushuLat_4)/eachboxLat)+1);
+            five_4 = format1000(parseInt((dushuLong_4 - preLong_4)/eachboxLong)+1);
             
+            vm.result += i+"、比例尺："+getStyle(i)
+                            +"  图幅号："
+                            +first_4
+                            +second_4
+                            +mathFormat_2(i)
+                            +four_4
+                            +five_4+"<br>";
         };
     }
 });

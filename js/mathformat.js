@@ -1,4 +1,9 @@
 /*
+ * By ： Gavin
+*/
+
+
+/*
  * 字母转换数字 
 */
 function mathFormat(word){
@@ -120,8 +125,29 @@ function getNetNum(o){
     }
 };
 
+function getNetNum_2(o){
+    switch(o){
+        case 1:
+            return "1";
+        case 2:
+            return "2";
+        case 3:
+            return "4";
+        case 4:
+            return "12";
+        case 5:
+            return "24";
+        case 6:
+            return "48";
+        case 7:
+            return "96";
+        case 8:
+            return "192"
+    }
+};
+
 /*
- *度数与小数的转化
+ *度数小数点形式转化为度分秒的形式
 */
 function changeNum(o){
     a = parseInt(o/60);  // 7110/60 = 118  度数
@@ -153,5 +179,19 @@ function getStyle(o){
             return "1:10000";
         case 8:
             return "1:5000";
+    }
+};
+
+/*
+ * 格式化数字输出
+*/
+function format1000(o){
+    o = o.toString();
+    if(o.length == "1"){
+        return "00"+o;
+    }else if(o.length == "2"){
+        return "0"+o;
+    }else if(o.length == "3"){
+        return o;
     }
 };
