@@ -55,6 +55,46 @@ function mathFormat(word){
 };
 
 /*
+ * 字母转换数字 
+*/
+function mathFormat_2(word){
+    switch(word){
+        case 1:
+            return "A";
+        case 2:
+            return "B";
+        case 3:
+            return "C";
+        case 4:
+            return "D";
+        case 5:
+            return "E";
+        case 6:
+            return "F";
+        case 7:
+            return "G";
+        case 8:
+            return "H";
+        case 9:
+            return "I";
+        case 10:
+            return "J";
+        case 11:
+            return "K";
+        case 12:
+            return "L";
+        case 13:
+            return "M";
+        case 14:
+            return "N";
+        case 15:
+            return "O";
+        case 16:
+            return "P";
+    }
+};
+
+/*
  * 精度范围的获取 
  * 比如：J50C，其中的C经过上面的数字转换，转换成数字
  * C对应的是1:250000比例尺，方格为4*4，所有返回4
@@ -97,21 +137,21 @@ function changeNum(o){
 */
 function getStyle(o){
     switch(o){
-        case "1":
+        case 1:
             return "1:1000000";
-        case "2":
+        case 2:
             return "1:500000";
-        case "3":
+        case 3:
             return "1:250000";
-        case "4":
+        case 4:
             return "1:100000";
-        case "5":
+        case 5:
             return "1:50000";
-        case "6":
+        case 6:
             return "1:25000";
-        case "7":
+        case 7:
             return "1:10000";
-        case "8":
+        case 8:
             return "1:5000";
     }
 };

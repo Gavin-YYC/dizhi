@@ -83,10 +83,21 @@ avalon.define("box4",function(vm){
     vm.weidu = "";
     vm.result = "";
     vm.click = function(){
+        vm.result = "";
         var keywordsLong = vm.jingdu.split(' ');
         var keywordsLat = vm.weidu.split(' ');
         second_4 = parseInt(keywordsLong[0]/6)+1+30;
         first_4 = mathFormat_2(parseInt(keywordsLat[0]/4)+1);
-        vm.result = first_4+second_4+"额、、后面的数字还在计算中。。。";
+        for (var i = 1; i <= 8; i++) {
+            vm.result += getStyle(i)+"<br>"+first_4+second_4+mathFormat_2(i)+"<br>";
+            preLong_4 = (second_4-32)*6;
+            nextLong_4 = (second_4-31)*6;
+
+            //全部转换成度数的形式
+            dushu_4 = parseFloat(keywordsLong[0])+parseFloat(keywordsLong[1]/60)+parseFloat(keywordsLong[2]/3600);
+            console.log(dushu_4);
+
+            
+        };
     }
 });
