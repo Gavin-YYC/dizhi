@@ -9,3 +9,11 @@ Demo地址：[地址工具包](http://youthol.cn/topic/2014/gj/)
 
 - **Bootstrap** ：Twitter推出的免费开源的前端框架 地址[Bootstrap](http://www.bootcss.com/)
 - **AvalonJS** ：国产优秀JS框架，作者：司徒正美 地址[AvalonJS](http://rubylouvre.github.io/mvvm/)
+
+功能列表
+------------
+
+1.根据图符号求经纬范围
+2.根据经度求带号
+3.度数转换
+4.计算点所在图号
